@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { color } from '../../../utils'
-import api from '../../../api'
+import http from '../../../http'
 
 import {
     List,
@@ -27,7 +27,7 @@ class BlogList extends Component {
             pageNo: this.state.pageNo,
             pageSize: this.state.pageSize
         }
-        const { data, code, total } = await api.get('/article/list', params)
+        const { data, code, total } = await http.get('/article/list', params)
         if (code === 1000) {
             this.setState({ data, total })
         }

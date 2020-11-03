@@ -6,7 +6,7 @@ import draftToHtml from 'draftjs-to-html'
 import htmlToDraft from 'html-to-draftjs'
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 import './item.less'
-import api from '../../../api'
+import http from '../../../http'
 
 const { Option } = Select
 
@@ -31,7 +31,7 @@ class createArticle extends React.Component {
         id && this.getDetail(id)
     }
     async getDetail (id) {
-        const { code, data } = await api.get('/article/item', { id })
+        const { code, data } = await http.get('/article/item', { id })
         if (code !== 1000) return false
         const { title, author, summary, category, tag, content } = data
         this.props.form.setFieldsValue({ title, author, summary, category, tag })
@@ -42,9 +42,9 @@ class createArticle extends React.Component {
     }
 
     async getTagList () {
-        const { data, code } = await api.get('tag/list/all')
+        const { data, code } = await http.get('tag/list/all')
         if (code === 1000) this.setState({ tag: data })
-        const category = await api.get('category/list/all')
+        const category = await http.get('category/list/all')
         if (category.code === 1000) this.setState({ category: category.data })
     }
 
@@ -62,14 +62,14 @@ class createArticle extends React.Component {
                 if (this.state.id) {
                     console.log(1111)
                     params.id = this.state.id
-                    const { code } = await api.post('/article/update', params)
+                    const { code } = await http.post('/article/update', params)
                     if (code === 1000) {
                         message.success('修改成功')
                         this.props.history.push('/admin/article')
                     }
                 } else {
                     console.log(222)
-                    const { code } = await api.post('/article/create', params)
+                    const { code } = await http.post('/article/create', params)
                     if (code === 1000) {
                         message.success('新增成功')
                         this.props.history.push('/admin/article')

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Table, Form, Input, Button, message, Modal } from 'antd';
-import api from '../../../api'
+import http from '../../../http'
 
 class articleList extends React.Component {
     constructor(props) {
@@ -45,7 +45,7 @@ class articleList extends React.Component {
         }
     }
     async handleClick (record) {
-        await api.post('star/destroy', { id: record.id })
+        await http.post('star/destroy', { id: record.id })
         message.success('删除成功')
         this.getList()
     }
@@ -61,7 +61,7 @@ class articleList extends React.Component {
             pageNo: this.state.pageNo,
             pageSize: this.state.pageSize
         }
-        const { data, total } = await api.get('star/list', params)
+        const { data, total } = await http.get('star/list', params)
         data.forEach((item, index) => {
             item.index = this.state.pageSize * (this.state.pageNo - 1) + index + 1
         })
@@ -93,7 +93,7 @@ class articleList extends React.Component {
     // 新增
     async handleOk () {
         const { url, title } = this.state
-        const { code, data } = await api.post('star/create', { title, url })
+        const { code, data } = await http.post('star/create', { title, url })
         this.setState({
             visible: false,
             title: '',

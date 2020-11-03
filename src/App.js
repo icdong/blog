@@ -1,19 +1,18 @@
-// import api from './api'
 import React, { Component } from 'react'
 import {
-    BrowserRouter,
+    BrowserRouter as Router,
     Route,
     Redirect
 } from 'react-router-dom'
 
-import routes from './Router'
+import routes from './routes'
 import requireLogin from './requireLogin'
 import Login from './pages/admin/login'
 
 class App extends Component {
     render () {
         return (
-            <BrowserRouter>
+            <Router>
                 <div>
                     <Route exact path="/" render={() => <Redirect to="/web/index" push />} />
                     <Route path='/login' component={Login} />
@@ -29,7 +28,7 @@ class App extends Component {
                         />
                     ))}
                 </div>
-            </BrowserRouter>
+            </Router>
         );
     }
 }

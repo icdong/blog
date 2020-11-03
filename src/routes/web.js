@@ -1,5 +1,5 @@
 /*
- * @Description: 
+ * @Description:
  * @Author: Do not edit
  * @Date: 2020-11-01 15:29:39
  * @LastEditors: Do not edit
@@ -7,46 +7,40 @@
  */
 import loadable from '../utils/loadable'
 
-const List = loadable(() => import('../pages/web/list/list'))
-const ArticleDetail = loadable(() => import('../pages/web/list/detail'))
-const Archive = loadable(() => import('../pages/web/archive'))
-const About = loadable(() => import('../pages/web/about'))
-const Star = loadable(() => import('../pages/web/star'))
-
 const webRoutes = [
     {
         menu: true,
         icon: 'home',
         title: '首页',
         path: '/web/index',
-        component: List
+        component: loadable(() => import('../pages/web/list/list'))
     },
     {
         menu: true,
         icon: 'edit',
         title: '归档',
         path: '/web/archive',
-        component: Archive
+        component: loadable(() => import('../pages/web/archive'))
     },
     {
         menu: true,
         icon: 'star',
         title: '收藏',
         path: '/web/star',
-        component: Star
+        component: loadable(() => import('../pages/web/star'))
     },
     {
         menu: true,
         icon: 'team',
         title: '关于',
         path: '/web/about',
-        component: About
+        component: loadable(() => import('../pages/web/about'))
     },
     {
         icon: 'more',
         title: '文章详情',
         path: '/web/detail/:id',
-        component: ArticleDetail
+        component: loadable(() => import('../pages/web/list/detail'))
     }
 ]
 

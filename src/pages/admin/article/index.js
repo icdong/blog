@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { color } from '../../../utils'
 import { Table, Form, Input, Button, message, Tag } from 'antd';
-import api from '../../../api'
+import http from '../../../http'
 
 class articleList extends React.Component {
     constructor(props) {
@@ -76,7 +76,7 @@ class articleList extends React.Component {
         this.getList()
     }
     async handleDelete(id) {
-        const { code } = await api.post('article/destroy', { id })
+        const { code } = await http.post('article/destroy', { id })
         if (code === 1000) {
             message.success('删除成功')
             this.getList()
@@ -92,7 +92,7 @@ class articleList extends React.Component {
             pageNo: this.state.pageNo,
             pageSize: this.state.pageSize
         }
-        const { data } = await api.get('/article/list', params)
+        const { data } = await http.get('/article/list', params)
         data.forEach((item, index) => {
             item.index = this.state.pageSize * (this.state.pageNo - 1) + index + 1
         })
@@ -102,7 +102,7 @@ class articleList extends React.Component {
         })
     }
     async handleCreate() {
-        const { code } = await api.post('example/add', { name: '小花' })
+        const { code } = await http.post('example/add', { name: '小花' })
         if (code === 200) this.getList()
     }
     handleSubmit = (e) => {

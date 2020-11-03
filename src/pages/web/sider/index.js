@@ -6,7 +6,7 @@ import {
     Divider,
 } from 'antd'
 import './index.less'
-import api from '../../../api'
+import http from '../../../http'
 import { color } from '../../../utils'
 
 class SiderCustom extends Component {
@@ -22,11 +22,11 @@ class SiderCustom extends Component {
         this.getArticleList()
     }
     async getArticleList () {
-        const { data, code } = await api.get('/article/list', { pageNo: 1, pageSize: 5 })
+        const { data, code } = await http.get('/article/list', { pageNo: 1, pageSize: 5 })
         code === 1000 && this.setState({ articleData: data })
     }
     async getTags () {
-        const { data, code } = await api.get('tag/list/all')
+        const { data, code } = await http.get('tag/list/all')
         code === 1000 && this.setState({ tags: data })
     }
     handleDetail (id) {

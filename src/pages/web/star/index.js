@@ -1,12 +1,12 @@
 /*
- * @Description: 
+ * @Description:
  * @Author: Do not edit
  * @Date: 2020-11-01 15:29:40
  * @LastEditors: Do not edit
  * @LastEditTime: 2020-11-01 16:42:32
  */
 import React, { Component } from 'react'
-import api from '../../../api'
+import http from '../../../http'
 import {
     List,
 } from 'antd'
@@ -31,7 +31,7 @@ class Collect extends Component {
             pageNo: this.state.pageNo,
             pageSize: this.state.pageSize
         }
-        const { data, total } = await api.get('star/list', params)
+        const { data, total } = await http.get('star/list', params)
         this.setState({
             data,
             total

@@ -4,7 +4,7 @@ import { EditorState, ContentState } from 'draft-js'
 import { Editor } from 'react-draft-wysiwyg'
 import htmlToDraft from 'html-to-draftjs'
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
-import api from '../../../api'
+import http from '../../../http'
 import './detail.less'
 
 class ArticleDetail extends Component {
@@ -28,7 +28,7 @@ class ArticleDetail extends Component {
         this.getDetail(id)
     }
     async getDetail (id) {
-        const { data } = await api.get('/article/detail', { id })
+        const { data } = await http.get('/article/detail', { id })
         this.setState({ data })
         const { content } = data
         const contentBlock = htmlToDraft(content)

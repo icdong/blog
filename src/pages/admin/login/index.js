@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, Icon, Input, Button, Card, message } from 'antd';
 import Particles from 'reactparticles.js'
 import './index.less'
-import api from '../../../api'
+import http from '../../../http'
 
 class login extends React.Component {
     constructor(props) {
@@ -15,7 +15,7 @@ class login extends React.Component {
         e.preventDefault()
         this.props.form.validateFields(async (err, values) => {
             if (!err) {
-                const { code, desc, data } = await api.post('/loginIn', values)
+                const { code, desc, data } = await http.post('/loginIn', values)
                 if (code === 1000) {
                     message.success(desc)
                     sessionStorage.setItem('blogUser', data.name)

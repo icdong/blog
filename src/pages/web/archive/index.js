@@ -1,5 +1,5 @@
 /*
- * @Description: 
+ * @Description:
  * @Author: Do not edit
  * @Date: 2020-11-01 15:29:40
  * @LastEditors: Do not edit
@@ -7,7 +7,7 @@
  */
 import React, { Component } from 'react'
 import { Timeline, Icon, Card } from 'antd'
-import api from '../../../api'
+import http from '../../../http'
 import { Link } from 'react-router-dom'
 
 class Archive extends Component {
@@ -21,7 +21,7 @@ class Archive extends Component {
         this.getArticleList()
     }
     async getArticleList () {
-        const { data, code } = await api.get('/article/list/all')
+        const { data, code } = await http.get('/article/list/all')
         code === 1000 && this.setState({ data })
     }
     render () {

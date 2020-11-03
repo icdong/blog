@@ -1,7 +1,7 @@
 import React from 'react'
 import { color } from '../../../utils'
 import { Table, Form, Input, Button, message, Modal, Tag } from 'antd';
-import api from '../../../api'
+import http from '../../../http'
 
 // function hasErrors(fieldsError) {
 //   return Object.keys(fieldsError).some(field => fieldsError[field]);
@@ -52,7 +52,7 @@ class articleList extends React.Component {
         }
     }
     async handleClick (record) {
-        await api.post('category/destroy', { id: record.id })
+        await http.post('category/destroy', { id: record.id })
         message.success('删除成功')
         this.getList()
     }
@@ -68,7 +68,7 @@ class articleList extends React.Component {
             pageNo: this.state.pageNo,
             pageSize: this.state.pageSize
         }
-        const { data, total } = await api.get('category/list', params)
+        const { data, total } = await http.get('category/list', params)
         data.forEach((item, index) => {
             item.index = this.state.pageSize * (this.state.pageNo - 1) + index + 1
         })
@@ -96,7 +96,7 @@ class articleList extends React.Component {
     }
     // 新增
     async handleOk () {
-        const { code, data } = await api.post('category/create', { name: this.state.tag })
+        const { code, data } = await http.post('category/create', { name: this.state.tag })
         this.setState({
             visible: false,
             tag: ''
@@ -163,4 +163,3 @@ class articleList extends React.Component {
 const article = Form.create({ name: 'horizontal_login' })(articleList)
 
 export default article
-
