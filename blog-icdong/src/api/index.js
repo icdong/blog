@@ -2,7 +2,7 @@ import axios from 'axios'
 import { message } from 'antd'
 
 axios.defaults.timeout = 5000
-axios.defaults.baseURL = 'location:3000/api'
+axios.defaults.baseURL = '/api'
 
 
 //http request 拦截器
