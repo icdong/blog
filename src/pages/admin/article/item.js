@@ -24,13 +24,13 @@ class createArticle extends React.Component {
             editorState: EditorState.createEmpty()
         }
     }
-    componentDidMount () {
+    componentDidMount() {
         const id = this.props.match.params.id
         this.setState({ id })
         this.getTagList()
         id && this.getDetail(id)
     }
-    async getDetail (id) {
+    async getDetail(id) {
         const { code, data } = await http.get('/article/item', { id })
         if (code !== 1000) return false
         const { title, author, summary, category, tag, content } = data
@@ -41,7 +41,7 @@ class createArticle extends React.Component {
         this.setState({ editorState })
     }
 
-    async getTagList () {
+    async getTagList() {
         const { data, code } = await http.get('tag/list/all')
         if (code === 1000) this.setState({ tag: data })
         const category = await http.get('category/list/all')
@@ -78,18 +78,18 @@ class createArticle extends React.Component {
             }
         })
     }
-    handleChangeTag (val) {
+    handleChangeTag(val) {
         console.log(val)
     }
-    handlChangeeCategory (val) {
+    handlChangeeCategory(val) {
         console.log(val)
     }
-    onEditorStateChange (editorState) {
+    onEditorStateChange(editorState) {
         this.setState({
             editorState
         })
     }
-    render () {
+    render() {
         const formItemLayout = {
             labelCol: {
                 xs: { span: 8 },

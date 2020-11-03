@@ -44,17 +44,17 @@ class articleList extends React.Component {
             ]
         }
     }
-    async handleClick (record) {
+    async handleClick(record) {
         await http.post('star/destroy', { id: record.id })
         message.success('删除成功')
         this.getList()
     }
-    componentDidMount () {
+    componentDidMount() {
         // To disabled submit button at the beginning.
         // this.props.form.validateFields();
         this.getList()
     }
-    async getList () {
+    async getList() {
         this.setState({ loading: true })
         const params = {
             title: this.state.title,
@@ -84,14 +84,14 @@ class articleList extends React.Component {
             }
         });
     }
-    handdleChange (e, name) {
+    handdleChange(e, name) {
         console.log(name)
         this.setState({
             [name]: e.target.value
         })
     }
     // 新增
-    async handleOk () {
+    async handleOk() {
         const { url, title } = this.state
         const { code, data } = await http.post('star/create', { title, url })
         this.setState({
@@ -103,18 +103,18 @@ class articleList extends React.Component {
         else message.error(data)
         this.getList()
     }
-    handleCancel () {
+    handleCancel() {
         this.setState({ visible: false })
     }
     // page
-    async handleOnChange (page) {
+    async handleOnChange(page) {
         await this.setState({
             pageNo: page.current,
             pageSize: page.pageSize
         })
         this.getList()
     }
-    render () {
+    render() {
         const { getFieldDecorator } = this.props.form
         return (
             <div>
@@ -147,7 +147,7 @@ class articleList extends React.Component {
                         total: this.state.total,
                         pageSize: this.state.pageSize,
                         pageSizeOptions: ['10', '20', '30', '40'],
-                        showTotal (total) { return `Total ${total} ` }
+                        showTotal(total) { return `Total ${total} ` }
                     }}
                     loading={this.state.loading}
                     columns={this.state.columns}

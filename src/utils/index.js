@@ -3,9 +3,9 @@
  * @Author: Do not edit
  * @Date: 2020-11-01 15:29:40
  * @LastEditors: Do not edit
- * @LastEditTime: 2020-11-01 16:40:02
+ * @LastEditTime: 2020-11-03 23:56:47
  */
-export function timetrans (time) {
+export function timetrans(time) {
     var date = new Date(time)
     var Y = date.getFullYear() + '-'
     var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-'
@@ -30,7 +30,7 @@ export const color = [
     'purple'
 ]
 
-export function getDateDiff (dateTimeStamp) {
+export function getDateDiff(dateTimeStamp) {
     var minute = 1000 * 60
     var hour = minute * 60
     var day = hour * 24

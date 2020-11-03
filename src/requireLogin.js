@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function requireLogin (Component) {
+export default function requireLogin(Component) {
     // 组件有已登陆的模块 直接返回 (防止从新渲染)
     if (Component.requireLogin) {
         return Component.requireLogin
@@ -15,15 +15,15 @@ export default function requireLogin (Component) {
             }
         }
 
-        componentWillMount () {
+        componentWillMount() {
             this.checkAuth();
         }
 
-        componentWillReceiveProps (nextProps) {
+        componentWillReceiveProps(nextProps) {
             this.checkAuth();
         }
 
-        checkAuth () {
+        checkAuth() {
             // 判断登陆
             const login = sessionStorage.getItem('blogUser')
             // 未登陆重定向到登陆页面
@@ -36,7 +36,7 @@ export default function requireLogin (Component) {
             this.setState({ login })
         }
 
-        render () {
+        render() {
             if (this.state.login) {
                 return <Component {...this.props} />
             }

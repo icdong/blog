@@ -17,14 +17,14 @@ class Archive extends Component {
             data: []
         }
     }
-    componentDidMount () {
+    componentDidMount() {
         this.getArticleList()
     }
-    async getArticleList () {
+    async getArticleList() {
         const { data, code } = await http.get('/article/list/all')
         code === 1000 && this.setState({ data })
     }
-    render () {
+    render() {
         const itemMap = this.state.data.map((v, i) => {
             return <Timeline.Item key={i}>
                 <Link to={`/web/detail/${v.id}`}>

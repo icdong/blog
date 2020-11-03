@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Author: Do not edit
+ * @Date: 2020-11-03 20:43:08
+ * @LastEditors: Do not edit
+ * @LastEditTime: 2020-11-03 23:59:46
+ */
 import React, { Component } from 'react'
 import avatar from '../../../assets/lf.jpg'
 import {
@@ -17,22 +24,22 @@ class SiderCustom extends Component {
             articleData: []
         }
     }
-    componentDidMount () {
+    componentDidMount() {
         this.getTags()
         this.getArticleList()
     }
-    async getArticleList () {
+    async getArticleList() {
         const { data, code } = await http.get('/article/list', { pageNo: 1, pageSize: 5 })
         code === 1000 && this.setState({ articleData: data })
     }
-    async getTags () {
+    async getTags() {
         const { data, code } = await http.get('tag/list/all')
         code === 1000 && this.setState({ tags: data })
     }
-    handleDetail (id) {
+    handleDetail(id) {
         this.props.history.push(`/web/detail/${id}`)
     }
-    render () {
+    render() {
         const list = this.state.articleData.map(v => (
             <li key={v.id} onClick={this.handleDetail.bind(this, v.id)}>
                 {v.title}

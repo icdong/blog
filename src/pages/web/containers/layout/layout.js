@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Author: Do not edit
+ * @Date: 2020-11-03 20:43:08
+ * @LastEditors: Do not edit
+ * @LastEditTime: 2020-11-03 23:59:00
+ */
 import React, { Component } from 'react'
 import {
     Layout
@@ -10,7 +17,7 @@ import HeaderCustom from '../../components/header/headerCustom'
 import './layout.css'
 const { Content, Footer } = Layout
 class Index extends Component {
-    render () {
+    render() {
         const contentHeight = document.body.clientHeight - 64 - 62
         return (
             <Layout className="wrapper">

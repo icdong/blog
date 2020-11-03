@@ -22,7 +22,7 @@ class Login extends Component {
         this.handleOk = this.handleOk.bind(this)
         this.handleChange = this.handleChange.bind(this)
     }
-    login ({ username, password }) {
+    login({ username, password }) {
         axios.post('/api/users/login', {
             username,
             password
@@ -48,7 +48,7 @@ class Login extends Component {
                 console.log(err)
             })
     }
-    handleOk () {
+    handleOk() {
         if (!this.state.username) {
             message.warn('用户名不能为空')
         } else if (!this.state.password) {
@@ -57,12 +57,12 @@ class Login extends Component {
             this.login(this.state)
         }
     }
-    handleChange (event) {
+    handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value
         })
     }
-    render () {
+    render() {
         return (
             <Modal
                 title="登录"

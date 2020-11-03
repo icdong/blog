@@ -1,7 +1,14 @@
+/*
+ * @Description: 
+ * @Author: Do not edit
+ * @Date: 2020-11-03 20:43:07
+ * @LastEditors: Do not edit
+ * @LastEditTime: 2020-11-03 23:55:37
+ */
 import React from 'react'
 
 class Article extends React.Component {
-    componentDidMount () {
+    componentDidMount() {
         var mathLib = {
             pi: 3.14,
             area: function (r, h) {
@@ -13,7 +20,7 @@ class Article extends React.Component {
         }
         console.log(mathLib.area.call({ pi: 1 }, 2, 3))
         console.log(mathLib.area.apply({ pi: 1 }, [2, 2]))
-        function foo () {
+        function foo() {
             console.log(this.a)
         }
         const food = {
@@ -49,12 +56,12 @@ class Article extends React.Component {
         console.log(num(arr))
         // 多维数组扁平化
         const flatArr = [[0, 1], [2, 3], [4, [5, 6, 7]]]
-        function flat (arr) {
+        function flat(arr) {
             return arr.reduce((pre, cur) => pre.concat(Array.isArray(cur) ? flat(cur) : cur), [])
         }
         console.log('flat: ', flat(flatArr))
     }
-    render () {
+    render() {
         return (
             <div>
                 <p>info</p>

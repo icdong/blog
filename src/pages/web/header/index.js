@@ -25,10 +25,10 @@ class HeaderCustom extends Component {
             visible: false
         }
     }
-    handleClickBars () {
+    handleClickBars() {
         this.setState({ visible: true })
     }
-    render () {
+    render() {
         const key = sessionStorage.getItem('webKey') || '0'
 
         const list = menus.filter(v => v.menu)

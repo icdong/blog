@@ -3,7 +3,7 @@
  * @Author: Do not edit
  * @Date: 2020-11-01 15:29:40
  * @LastEditors: Do not edit
- * @LastEditTime: 2020-11-01 16:48:21
+ * @LastEditTime: 2020-11-03 23:59:22
  */
 import React, { Component } from 'react'
 import {
@@ -26,10 +26,10 @@ class Index extends Component {
         super(props)
         this.state = {}
     }
-    componentDidMount () {
+    componentDidMount() {
         document.title = 'icdong博客'
     }
-    render () {
+    render() {
         const contentHeight = document.body.clientHeight - 64 - 62
         return (
             <div>

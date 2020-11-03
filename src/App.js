@@ -1,3 +1,10 @@
+/*
+ * @Description: 项目入口
+ * @Author: Do not edit
+ * @Date: 2020-11-03 20:43:07
+ * @LastEditors: Do not edit
+ * @LastEditTime: 2020-11-03 23:56:23
+ */
 import React, { Component } from 'react'
 import {
     BrowserRouter as Router,
@@ -10,7 +17,7 @@ import requireLogin from './requireLogin'
 import Login from './pages/admin/login'
 
 class App extends Component {
-    render () {
+    render() {
         return (
             <Router>
                 <div>

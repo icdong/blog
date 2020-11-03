@@ -22,10 +22,10 @@ class Collect extends Component {
             total: 0
         }
     }
-    componentDidMount () {
+    componentDidMount() {
         this.getList()
     }
-    async getList () {
+    async getList() {
         const params = {
             title: '',
             pageNo: this.state.pageNo,
@@ -37,7 +37,7 @@ class Collect extends Component {
             total
         })
     }
-    render () {
+    render() {
         const pagination = {
             pageSize: 10,
             size: 'small',

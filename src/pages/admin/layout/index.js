@@ -23,13 +23,13 @@ class App extends Component {
             collapsed: !this.state.collapsed,
         });
     }
-    componentDidMount () {
+    componentDidMount() {
         document.title = 'admin'
     }
-    handleClickMenuItem (item) {
+    handleClickMenuItem(item) {
         sessionStorage.setItem('menuItmeKey', String(item.key))
     }
-    handleClickDrop () {
+    handleClickDrop() {
         this.props.history.push('/login')
     }
     menuItem = () => {
@@ -43,7 +43,7 @@ class App extends Component {
                 </Menu.Item>)
         })
     }
-    render () {
+    render() {
         const logoClass = this.state.collapsed ? 'logoMin' : 'logoMax'
         const menu = (
             <Menu onClick={this.handleClickDrop.bind(this)}>

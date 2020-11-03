@@ -18,16 +18,16 @@ class ArticleDetail extends Component {
             editorState: EditorState.createEmpty()
         }
     }
-    componentWillReceiveProps (nextProps) {
+    componentWillReceiveProps(nextProps) {
         const id = nextProps.match.params.id
         const preId = this.props.match.params.id
         id !== preId && this.getDetail(id)
     }
-    componentDidMount () {
+    componentDidMount() {
         const id = this.props.match.params.id
         this.getDetail(id)
     }
-    async getDetail (id) {
+    async getDetail(id) {
         const { data } = await http.get('/article/detail', { id })
         this.setState({ data })
         const { content } = data
@@ -36,7 +36,7 @@ class ArticleDetail extends Component {
         const editorState = EditorState.createWithContent(contentState)
         this.setState({ editorState })
     }
-    render () {
+    render() {
         const { data } = this.state
 
         const extra = <div className='content-extra'>

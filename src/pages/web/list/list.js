@@ -18,10 +18,10 @@ class BlogList extends Component {
             data: []
         }
     }
-    componentDidMount () {
+    componentDidMount() {
         this.getList()
     }
-    async getList () {
+    async getList() {
         this.setState({ loading: true })
         const params = {
             pageNo: this.state.pageNo,
@@ -32,7 +32,7 @@ class BlogList extends Component {
             this.setState({ data, total })
         }
     }
-    render () {
+    render() {
         const pagination = {
             current: this.state.pageNo,
             pageSize: this.state.pageSize,

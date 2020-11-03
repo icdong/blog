@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Author: Do not edit
+ * @Date: 2020-11-03 20:43:07
+ * @LastEditors: Do not edit
+ * @LastEditTime: 2020-11-03 23:58:26
+ */
 import React from 'react'
 import { Form, Icon, Input, Button, Card, message } from 'antd';
 import Particles from 'reactparticles.js'
@@ -28,7 +35,7 @@ class login extends React.Component {
         })
     }
 
-    render () {
+    render() {
         const { getFieldDecorator } = this.props.form;
         return (
             <div className='login'>

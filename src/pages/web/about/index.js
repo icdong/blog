@@ -3,7 +3,7 @@
  * @Author: Do not edit
  * @Date: 2020-11-01 15:29:40
  * @LastEditors: Do not edit
- * @LastEditTime: 2020-11-01 16:58:43
+ * @LastEditTime: 2020-11-03 23:58:48
  */
 import React, { Component } from 'react'
 import './index.less'
@@ -15,7 +15,7 @@ class About extends Component {
     state = { commentList: [] }
 
 
-    render () {
+    render() {
         return (
             <Card bordered={false}>
                 <div className="content-inner-wrapper about">

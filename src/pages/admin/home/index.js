@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Author: Do not edit
+ * @Date: 2020-11-03 20:43:07
+ * @LastEditors: Do not edit
+ * @LastEditTime: 2020-11-03 23:58:12
+ */
 import React from 'react'
 
 class Article extends React.Component {
@@ -5,13 +12,13 @@ class Article extends React.Component {
         super(props)
         this.state = {}
     }
-    componentDidMount () {
+    componentDidMount() {
         console.log(1, this.props)
     }
-    handleClick () {
+    handleClick() {
         // this.props.history.push('/login')
     }
-    render () {
+    render() {
         return (
             <div>
                 <h3 onClick={this.handleClick.bind(this)}>welcome</h3>

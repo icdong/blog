@@ -21,7 +21,7 @@ class Register extends Component {
         this.handleOk = this.handleOk.bind(this)
         this.handleChange = this.handleChange.bind(this)
     }
-    register ({ username, password }) {
+    register({ username, password }) {
         axios.post('/api/users', {
             username,
             password,
@@ -45,7 +45,7 @@ class Register extends Component {
                 console.log(err)
             })
     }
-    handleOk () {
+    handleOk() {
         if (!this.state.username) {
             message.warn('用户名不能为空')
         } else if (!this.state.password) {
@@ -54,12 +54,12 @@ class Register extends Component {
             this.register(this.state)
         }
     }
-    handleChange (event) {
+    handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value
         })
     }
-    render () {
+    render() {
         return (
             <Modal
                 title="注册"

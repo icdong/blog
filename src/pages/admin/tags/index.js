@@ -51,17 +51,17 @@ class articleList extends React.Component {
             ]
         }
     }
-    async handleClick (record) {
+    async handleClick(record) {
         await http.post('tag/destroy', { id: record.id })
         message.success('删除成功')
         this.getList()
     }
-    componentDidMount () {
+    componentDidMount() {
         // To disabled submit button at the beginning.
         // this.props.form.validateFields();
         this.getList()
     }
-    async getList () {
+    async getList() {
         this.setState({ loading: true })
         const params = {
             name: this.state.name,
@@ -91,11 +91,11 @@ class articleList extends React.Component {
             }
         });
     }
-    handdleChange (e) {
+    handdleChange(e) {
         this.setState({ tag: e.target.value })
     }
     // 新增
-    async handleOk () {
+    async handleOk() {
         const { code, data } = await http.post('tag/create', { name: this.state.tag })
         this.setState({
             visible: false,
@@ -105,18 +105,18 @@ class articleList extends React.Component {
         else message.error(data)
         this.getList()
     }
-    handleCancel () {
+    handleCancel() {
         this.setState({ visible: false })
     }
     // page
-    async handleOnChange (page) {
+    async handleOnChange(page) {
         await this.setState({
             pageNo: page.current,
             pageSize: page.pageSize
         })
         this.getList()
     }
-    render () {
+    render() {
         const { getFieldDecorator } = this.props.form
         return (
             <div>
@@ -147,7 +147,7 @@ class articleList extends React.Component {
                         total: this.state.total,
                         pageSize: this.state.pageSize,
                         pageSizeOptions: ['10', '20', '30', '40'],
-                        showTotal (total) { return `Total ${total} ` }
+                        showTotal(total) { return `Total ${total} ` }
                     }}
                     loading={this.state.loading}
                     columns={this.state.columns}
