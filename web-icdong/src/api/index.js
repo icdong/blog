@@ -2,7 +2,7 @@ import axios from 'axios'
 import { message } from 'antd'
 
 axios.defaults.timeout = 5000
-axios.defaults.baseURL = '/api'
+axios.defaults.baseURL = 'location:3000/api'
 
 
 //http request 拦截器
@@ -41,18 +41,17 @@ export default {
         return new Promise((resolve, reject) => {
             axios.get(url, {
                 params
+            }).then(res => {
+                resolve(res.data);
             })
-                .then(res => {
-                    resolve(res.data);
-                })
         })
     },
     post (url, data = {}) {
         return new Promise((resolve, reject) => {
             axios.post(url, data)
-                .then(res => {
-                    resolve(res.data)
-                })
+            .then(res => {
+                resolve(res.data)
+            })
         })
     },
     download (url, target = false, fileName = '') {

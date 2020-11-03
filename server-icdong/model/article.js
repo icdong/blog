@@ -1,11 +1,11 @@
 /*
- * @Description: 
+ * @Description:
  * @Author: Do not edit
  * @Date: 2020-11-01 15:28:06
  * @LastEditors: Do not edit
  * @LastEditTime: 2020-11-01 16:50:46
  */
-const sequelize = require('../sequelize ')
+const sequelize = require('../sequelize')
 const Sequelize = require('sequelize')
 const moment = require('moment')
 

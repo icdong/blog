@@ -1,5 +1,5 @@
 /*
- * @Description: 
+ * @Description:
  * @Author: Do not edit
  * @Date: 2020-11-01 15:28:06
  * @LastEditors: Do not edit
@@ -7,7 +7,7 @@
  */
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('dev', 'root', '123456', {
+const sequelize = new Sequelize('Blog', 'admin', 'password', {
     host: 'localhost',
     dialect: 'mysql',
     operatorsAliases: false,

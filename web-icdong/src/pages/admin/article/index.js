@@ -72,20 +72,20 @@ class articleList extends React.Component {
     }
 
 
-    componentDidMount () {
+    componentDidMount() {
         this.getList()
     }
-    async handleDelete (id) {
+    async handleDelete(id) {
         const { code } = await api.post('article/destroy', { id })
         if (code === 1000) {
             message.success('删除成功')
             this.getList()
         }
     }
-    handleEdit (id) {
+    handleEdit(id) {
         this.props.history.push(`/admin/article-edit/${id}`)
     }
-    async getList () {
+    async getList() {
         this.setState({ loading: true })
         const params = {
             title: this.state.title,
@@ -101,7 +101,7 @@ class articleList extends React.Component {
             loading: false
         })
     }
-    async handleCreate () {
+    async handleCreate() {
         const { code } = await api.post('example/add', { name: '小花' })
         if (code === 200) this.getList()
     }
@@ -117,7 +117,7 @@ class articleList extends React.Component {
             }
         });
     }
-    render () {
+    render() {
         const { getFieldDecorator } = this.props.form
         return (
             <div>

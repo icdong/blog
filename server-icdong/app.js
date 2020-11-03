@@ -1,5 +1,5 @@
 /*
- * @Description: 
+ * @Description:
  * @Author: Do not edit
  * @Date: 2020-11-01 15:28:06
  * @LastEditors: Do not edit
@@ -15,7 +15,7 @@ const logger = require('koa-logger')
 
 const index = require('./routes/index')
 const users = require('./routes/users')
-require('./sequelize ')
+require('./sequelize')
 
 // error handler
 onerror(app)
