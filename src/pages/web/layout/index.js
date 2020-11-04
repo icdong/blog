@@ -16,7 +16,7 @@ import {
 } from 'react-router-dom'
 import HeaderCustom from '../header'
 import SiderCustom from '../sider'
-import routes from '../../../Router/web'
+import routes from '../../../routes/web'
 import './index.less'
 
 const { Content, Footer } = Layout

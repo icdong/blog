@@ -15,7 +15,7 @@ import {
 } from 'antd'
 import './index.less'
 import { Link } from 'react-router-dom'
-import menus from '../../../Router/web'
+import menus from '../../../routes/web'
 const { Header } = Layout
 
 class HeaderCustom extends Component {
