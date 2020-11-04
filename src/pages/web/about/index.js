@@ -39,13 +39,13 @@ class About extends Component {
                         <li>Daito Chai</li>
                         <li>
                             <Icon type="github" style={{ fontSize: '16px' }} />：
-            <a
+                            <a
                                 target="_blank"
                                 className='link'
                                 rel="noreferrer noopener"
                                 href="https://github.com/icdong">
                                 github
-            </a>
+                            </a>
                         </li>
                         <li>
                             联系方式：

@@ -44,7 +44,7 @@ class ArticleDetail extends Component {
             {data.createdAt}
             <Icon type="eye" style={{ marginRight: 8, marginLeft: 8 }} />
             {data.readedCount} 次预览
-    </div>
+        </div>
 
         return (
             <div>

@@ -42,8 +42,8 @@ class Index extends Component {
                     <Footer
                         style={{ textAlign: 'center' }}
                     >
-                        Copyright © Water 2018
-          </Footer>
+                        Copyright © Daito 2019
+                    </Footer>
                 </Layout>
             </Layout>
         )

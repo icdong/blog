@@ -26,24 +26,23 @@ class Register extends Component {
             username,
             password,
             authority_id: 2
+        }).then(res => {
+            if (res.status === 201 && res.data.code === 0) {
+                this.props.registerSuccess(res.data)
+                this.props.handleCancel()
+                message.success('注册成功, 请登录~', 1)
+                this.setState({
+                    username: '',
+                    password: ''
+                })
+            } else {
+                this.props.registerFailue(res.data.msg)
+                message.error(res.data.msg, 1)
+            }
         })
-            .then(res => {
-                if (res.status === 201 && res.data.code === 0) {
-                    this.props.registerSuccess(res.data)
-                    this.props.handleCancel()
-                    message.success('注册成功, 请登录~', 1)
-                    this.setState({
-                        username: '',
-                        password: ''
-                    })
-                } else {
-                    this.props.registerFailue(res.data.msg)
-                    message.error(res.data.msg, 1)
-                }
-            })
-            .catch(err => {
-                console.log(err)
-            })
+        .catch(err => {
+            console.log(err)
+        })
     }
     handleOk() {
         if (!this.state.username) {
@@ -96,7 +95,7 @@ class Register extends Component {
                         onClick={this.handleOk}
                     >
                         注册
-          </Button>
+                    </Button>
                 </div>
             </Modal>
         )

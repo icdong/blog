@@ -53,12 +53,12 @@ class SiderCustom extends Component {
                     </header>
                     <p className="admin-name">
                         柴少
-          </p>
+                    </p>
                     <p className="admin-desc">
                         不爱骑行，不爱跳舞
-            <br />
-            前端摸鱼人员，全村最靓的仔
-          </p>
+                        <br />
+                        前端摸鱼人员，全村最靓的仔
+                    </p>
                 </div>
                 <div className="recent-article">
                     <Card bordered={false}>

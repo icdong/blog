@@ -68,7 +68,7 @@ class Index extends Component {
                         </Layout>
                         <Footer style={{ textAlign: 'center' }}>
                             Copyright © Daito Chai 2019
-          </Footer>
+                        </Footer>
                     </Layout>
                 </Layout>
                 <BackTop visibilityHeight='100' />
