@@ -18,8 +18,6 @@ class Article extends React.Component {
                 return 2 * this.pi * r;
             }
         }
-        console.log(mathLib.area.call({ pi: 1 }, 2, 3))
-        console.log(mathLib.area.apply({ pi: 1 }, [2, 2]))
         function foo() {
             console.log(this.a)
         }
@@ -39,9 +37,6 @@ class Article extends React.Component {
             }, [])
         }
         const val = newArr(arr)
-        console.log('reduce: ', val)
-        console.log('set: ', [...new Set(arr)])
-        console.log('set: ', Array.from(new Set(arr)))
         // 判断重复次数
         const num = (agr) => {
             return agr.reduce((pre, cur) => {
@@ -53,13 +48,11 @@ class Article extends React.Component {
                 return pre
             }, {})
         }
-        console.log(num(arr))
         // 多维数组扁平化
         const flatArr = [[0, 1], [2, 3], [4, [5, 6, 7]]]
         function flat(arr) {
             return arr.reduce((pre, cur) => pre.concat(Array.isArray(cur) ? flat(cur) : cur), [])
         }
-        console.log('flat: ', flat(flatArr))
     }
     render() {
         return (

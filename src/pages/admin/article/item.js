@@ -60,7 +60,6 @@ class createArticle extends React.Component {
                     content
                 }
                 if (this.state.id) {
-                    console.log(1111)
                     params.id = this.state.id
                     const { code } = await http.post('/article/update', params)
                     if (code === 1000) {
@@ -68,7 +67,6 @@ class createArticle extends React.Component {
                         this.props.history.push('/admin/article')
                     }
                 } else {
-                    console.log(222)
                     const { code } = await http.post('/article/create', params)
                     if (code === 1000) {
                         message.success('新增成功')

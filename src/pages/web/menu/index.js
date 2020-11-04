@@ -25,7 +25,6 @@ const renderSubMenu =
             {sub && sub.map(item => renderMenuItem(item))}
         </Menu.SubMenu>
 const key = sessionStorage.getItem('webKey') || '0'
-console.log('key', key)
 export default ({ menus }) => <Menu mode="horizontal" defaultSelectedKeys={[key]}>
     {menus && menus.map(
         (item, i) => item.sub && item.sub.length ?

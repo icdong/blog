@@ -85,7 +85,6 @@ class articleList extends React.Component {
         });
     }
     handdleChange(e, name) {
-        console.log(name)
         this.setState({
             [name]: e.target.value
         })
