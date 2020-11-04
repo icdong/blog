@@ -1,5 +1,5 @@
 /*
- * @Description:
+ * @Description: server端入口
  * @Author: Do not edit
  * @Date: 2020-11-01 15:28:06
  * @LastEditors: Do not edit
@@ -14,7 +14,7 @@ const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 
 const index = require('./routes/index')
-const users = require('./routes/users')
+const example = require('./routes/example')
 require('./sequelize')
 
 // error handler
@@ -39,10 +39,8 @@ app.use(async (ctx, next) => {
     const ms = new Date() - start
     console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 })
-const example = require('./routes/example')
 // routes
 app.use(index.routes(), index.allowedMethods())
-app.use(users.routes(), users.allowedMethods())
 app.use(example.routes(), example.allowedMethods())
 
 // error-handling
