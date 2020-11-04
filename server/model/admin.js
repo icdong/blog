@@ -8,21 +8,35 @@
 const sequelize = require('../sequelize')
 const Sequelize = require('sequelize')
 
-const admin = sequelize.define('admin', {
-    id: {
-        type: Sequelize.INTEGER(11),
-        primaryKey: true,
-        autoIncrement: true
-    },
-    name: {
-        type: Sequelize.STRING,
-        unique: {
-            msg: '已添加'
+const admin = sequelize.define('admin',
+    {
+        id: {
+            type: Sequelize.INTEGER(11),
+            primaryKey: true,
+            autoIncrement: true
+        },
+        name: {
+            type: Sequelize.STRING,
+            unique: {
+                msg: '已添加'
+            }
+        },
+        password: {
+            type: Sequelize.INTEGER(6)
         }
     },
-    password: {
-        type: Sequelize.INTEGER(6)
+    {
+        freezeTableName: true
     }
-}, { freezeTableName: true })
+)
+
+// // 初始化账户
+// admin.create({
+//     name: 'admin',
+//     password: '123456'
+// }).done((err, result) => {
+//     console.log(err)
+//     console.log(result)
+// })
 
 module.exports = admin
