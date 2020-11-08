@@ -1,5 +1,5 @@
 /*
- * @Description: 
+ * @Description:
  * @Author: Do not edit
  * @Date: 2020-11-03 20:43:07
  * @LastEditors: Do not edit
@@ -9,7 +9,7 @@ import React from 'react'
 
 class Article extends React.Component {
     componentDidMount() {
-        var mathLib = {
+        let mathLib = {
             pi: 3.14,
             area: function (r, h) {
                 return this.pi * r * r * h
