@@ -16,7 +16,10 @@ const Example = sequelize.define('Example', {
         }
     },
     age: Sequelize.INTEGER
-}, { freezeTableName: true })
+},
+{
+    freezeTableName: true
+})
 
 // Example.sync({force: true})
 module.exports = Example

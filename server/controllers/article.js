@@ -99,8 +99,7 @@ const create = async ctx => {
             code: 1000,
             data: '创建成功'
         }
-    }
-    catch (err) {
+    } catch (err) {
         const msg = err.errors[0]
         ctx.body = {
             code: 300,

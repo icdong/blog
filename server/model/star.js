@@ -25,8 +25,8 @@ const star = sequelize.define('star', {
         }
     }
 },
-    {
-        freezeTableName: true
-    })
+{
+    freezeTableName: true
+})
 
 module.exports = star

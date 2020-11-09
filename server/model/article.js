@@ -46,8 +46,8 @@ const article = sequelize.define('article', {
         }
     }
 },
-    {
-        freezeTableName: true
-    })
+{
+    freezeTableName: true
+})
 
 module.exports = article

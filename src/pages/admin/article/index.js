@@ -101,10 +101,6 @@ class articleList extends React.Component {
             loading: false
         })
     }
-    async handleCreate() {
-        const { code } = await http.post('example/add', { name: '小花' })
-        if (code === 200) this.getList()
-    }
     handleSubmit = (e) => {
         e.preventDefault()
         this.props.form.validateFields(async (err, values) => {

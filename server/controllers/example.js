@@ -14,8 +14,7 @@ const creat = async (ctx) => {
             code: 1000,
             data: 'create success'
         }
-    }
-    catch (err) {
+    } catch (err) {
         const msg = err.errors[0]
         ctx.body = {
             code: 200,
