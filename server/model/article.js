@@ -30,7 +30,7 @@ const article = sequelize.define('article', {
     summary: Sequelize.STRING,
     category: Sequelize.STRING,
     tag: Sequelize.STRING,
-    content: Sequelize.TEXT,
+    content: Sequelize.TEXT('long'),
     createdAt: {
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW,
