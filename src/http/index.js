@@ -2,8 +2,8 @@
  * @Description:
  * @Author: Do not edit
  * @Date: 2020-11-03 20:43:07
- * @LastEditors: Do not edit
- * @LastEditTime: 2020-11-03 23:19:22
+ * @LastEditors: Daito Chai
+ * @LastEditTime: 2020-12-16 21:02:39
  */
 import axios from 'axios'
 import { message } from 'antd'
@@ -12,34 +12,28 @@ axios.defaults.timeout = 5000
 axios.defaults.baseURL = '/api'
 
 //http request 拦截器
-axios.interceptors.request.use(
-    config => {
-        config.headers = {
-            // 'Content-Type':'application/x-www-form-urlencoded'
-        }
-        return config
-    },
-    error => {
-        message.error('请求出错了， 请稍后重试')
-        return Promise.reject(error)
+axios.interceptors.request.use(config => {
+    config.headers = {
+        // 'Content-Type':'application/x-www-form-urlencoded'
     }
-);
+    return config
+}, error => {
+    message.error('请求出错了， 请稍后重试')
+    return Promise.reject(error)
+});
 
 //http response 拦截器
-axios.interceptors.response.use(
-    res => {
-        // const data = res.data
-        // if (data.code !== 1000) {
-        //   message.error(data.desc)
-        //   return Promise.reject(data)
-        // }
-        return res
-    },
-    error => {
-        message.error('请求出错了， 请稍后重试')
-        return Promise.reject(error)
-    }
-)
+axios.interceptors.response.use(res => {
+    // const data = res.data
+    // if (data.code !== 1000) {
+    //   message.error(data.desc)
+    //   return Promise.reject(data)
+    // }
+    return res
+}, error => {
+    message.error('请求出错了， 请稍后重试')
+    return Promise.reject(error)
+})
 
 class http {
     /**
@@ -59,10 +53,9 @@ class http {
     }
     static post(url, data = {}) {
         return new Promise((resolve, reject) => {
-            axios.post(url, data)
-                .then(res => {
-                    resolve(res.data)
-                })
+            axios.post(url, data).then(res => {
+                resolve(res.data)
+            })
         })
     }
 
