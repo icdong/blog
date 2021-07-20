@@ -3,7 +3,7 @@
  * @Author: Do not edit
  * @Date: 2020-11-01 15:28:06
  * @LastEditors: Daito Chai
- * @LastEditTime: 2021-07-20 11:15:47
+ * @LastEditTime: 2021-07-20 14:04:10
  */
 const sequelize = require('../sequelize')
 const Sequelize = require('sequelize')
@@ -31,12 +31,12 @@ const admin = sequelize.define('admin',
 )
 
 // // 初始化账户
-admin.create({
-    name: 'admin',
-    password: '123456'
-}).done((err, result) => {
-    console.log(err)
-    console.log(result)
-})
+// admin.create({
+//     name: 'admin',
+//     password: '123456'
+// }).done((err, result) => {
+//     console.log(err)
+//     console.log(result)
+// })
 
 module.exports = admin
