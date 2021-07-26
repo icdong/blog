@@ -3,8 +3,8 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "antd": "^3.15.0",
-        "axios": "^0.18.0",
+        "antd": "^4.16.8",
+        "axios": "^0.21.1",
         "babel-plugin-import": "^1.11.0",
         "customize-cra": "^0.2.12",
         "draft-js": "^0.10.5",
@@ -38,7 +38,6 @@
         "not op_mini all"
     ],
     "devDependencies": {
-        "antd": "^3.15.0",
         "react-router-dom": "^4.3.1"
     }
 }
