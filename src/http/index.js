@@ -3,11 +3,14 @@
  * @Author: Do not edit
  * @Date: 2020-11-03 20:43:07
  * @LastEditors: Daito Chai
- * @LastEditTime: 2020-12-16 21:02:39
+ * @LastEditTime: 2021-07-23 10:16:04
  */
 import axios from 'axios'
 import { message } from 'antd'
-
+if (process.env.NODE_ENV === 'development') {
+    require('../mock')
+    console.log('------ 使用mock假数据 ------')
+}
 axios.defaults.timeout = 5000
 axios.defaults.baseURL = '/api'
 
