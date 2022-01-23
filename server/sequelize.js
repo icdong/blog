@@ -9,7 +9,11 @@ const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize('blog', 'root', 'password', {
     host: 'localhost',
+    port: 3306,// 数据库链接端口
     dialect: 'mysql',
+    dialectOptions: {
+        socketPath: '/tmp/mysql.sock' // 指定套接字文件路径
+    },
     operatorsAliases: false,
     pool: {
         max: 5,
