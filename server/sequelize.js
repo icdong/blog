@@ -7,7 +7,7 @@
  */
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('blog', 'root', 'password', {
+const sequelize = new Sequelize('blog', 'root', 'admin123456', {
     host: 'localhost',
     port: 3306,// 数据库链接端口
     dialect: 'mysql',
